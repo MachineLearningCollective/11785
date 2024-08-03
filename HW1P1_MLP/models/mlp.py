@@ -3,7 +3,12 @@ import numpy as np
 from mytorch.nn.linear import Linear
 from mytorch.nn.activation import ReLU
 
-
+"""
+this py file includes 3 different mlp structures, which are:
+1) no hidden layer, with Relu activation func
+2) 1 hidden layer, with Relu activation func
+3) 4 hidden layer, with Relu activation func
+"""
 class MLP0:
 
     def __init__(self, debug=False):
