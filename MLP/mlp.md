@@ -1,17 +1,18 @@
 # MLP & MFCC Phoneme Recognition
 
-As mentioned in the readme file, the MLP models usually look like this. 
-<img src="MLP/mlp.jpg" width="500" />
+As mentioned in the readme file, the MLP models usually look like this.
+
+<img src="mlp.jpg" width="500" />
 
 And for each node in the picture, it is a linear calculation, which can be represented as "Wx + b", where w is the weight of this node and b is the bias. 
 
 With a given number N, we can create N cells in each layer and connect them with the previous/next layer with weights and bias.
 
-<img src="MLP/cell.jpg" width="400" />
+<img src="cell.jpg" width="400" />
 However, linear equation like "Wx + b" can only represent linear relationship. To mimic non-linear relationships in real world, we introduced activation functions.
 
 
-<img src="MLP/activation.jpg" width="500" />
+<img src="activation.jpg" width="500" />
 
 Activation functions are an indispensable part of neural networks. By introducing non-linearity, they enable the network to learn and represent complex non-linear relationships, 
 making it capable of handling complex tasks such as image recognition and natural language processing.
