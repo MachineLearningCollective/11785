@@ -1,5 +1,10 @@
 # MLP & MFCC Phoneme Recognition
 
+[MLP](##MLP-Details)
+
+[Phoneme Recognition](##Phoneme-Recognition-Task)
+
+## MLP Details
 As mentioned in the readme file, the MLP models usually look like this.
 
 <img src="mlp.jpg" width="500" />
@@ -52,7 +57,31 @@ class SGD:
                 self.l[i].b = self.l[i].b - self.lr * self.v_b[i]
 ```
 
-## Phoneme Recognition task
-After knowing how a MLP works, know we can use this model to predict/classify data. 
+## Phoneme Recognition Task
+After knowing how a MLP works, now we can use this model to predict/classify data. 
+For this task, we are provided a dataset of audio recordings (utterances) and their phoneme state (subphoneme) labels. The data comes from articles published in
+the Wall Street Journal (WSJ) that are read aloud and labelled using the original text. 
+
+As letters are the atomic elements of written language, phonemes are the atomic elements of speech. It is
+crucial for us to have a means to distinguish different sounds in speech that may or may not represent the
+same letter or combinations of letters in the written alphabet.
+
+For this challenge, we will consider a total of 40 phonemes in this language.
+
+
+A powerful technique in speech recognition is to model speech as a markov process with unobserved states.
+This model considers observed speech to be dependent on unobserved state transitions. We refer to these
+unobserved states as phoneme states or subphonemes. For each phoneme, there are 3 respective phoneme
+states. The transition graph of the phoneme states for a given phoneme is as follows:
+
+Example: [”+BREATH+”, ”+COUGH+”, ”+NOISE+”, ”+SMACK+”, ”+UH+”, ”+UM+”, ”AA”, ”AE”,
+”AH”, ”AO”, ”AW”, ”AY”, ”B”, ”CH”, ”D”, ”DH”, ”EH”, ”ER”, ”EY”, ”F”, ”G”, ”HH”, ”IH”, ”IY”,
+”JH”, ”K”, ”L”, ”M”, ”N”, ”NG”, ”OW”, ”OY”, ”P”, ”R”, ”S”, ”SH”, ”SIL”, ”T”, ”TH”, ”UH”, ”UW”,
+”V”, ”W”, ”Y”, ”Z”, ”ZH”]
+
+The data provided in this task consists of these melspectrograms, and phoneme labels
+for each 27-dimensional vector in the melspectrogram. Our final goal is to predict
+the label of a particular 27-dimensional vector in an utterance (40 different labels).
+
 
 
